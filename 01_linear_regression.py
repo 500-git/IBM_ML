@@ -59,6 +59,7 @@ plt.scatter(train.ENGINESIZE,train.CO2EMISSIONS,color = "blue")
 plt.plot(train_x,reger.coef_[0][0]*train_x + reger.intercept_[0],"-r")
 plt.xlabel("Engine Size")
 plt.ylabel("Emission")
+plt.show()
 
 from sklearn.metrics import r2_score
 
