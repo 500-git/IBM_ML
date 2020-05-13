@@ -56,3 +56,18 @@ plt.legend(loc = "best")
 plt.xlabel("Year")
 plt.ylabel("GDP")
 plt.show()
+
+msk = np.random.rand(len(df)) < 0.8
+train_x = xdata[msk]
+test_x = xdata[~msk]
+train_y = ydata[msk]
+test_y = ydata[~msk]
+
+p_opt,p_cov = curve_fit(sigmoid,train_x,train_y)
+
+y_hat = sigmoid(test_x, *p_opt)
+
+print("MAE:{0} ".format(np.mean(np.absolute(y_hat - test_y))))
+print("MSE:{0} ".format(np.mean(pow(y_hat - test_y,2))))
+from sklearn.metrics import r2_score
+print("R2-score:{0} ".format(r2_score(y_hat,test_y)))
