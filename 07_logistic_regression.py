@@ -82,6 +82,8 @@ np.set_printoptions(precision = 2)
 plt.figure()
 plot_confusion_matrix(cnf_matrix,classes = ["churn = 1","churn = 0"],normalize = False,title = "Confusion Matrix")
 
+plt.show()
+
 print(classification_report(y_test,yhat))
 
 from sklearn.metrics import log_loss
