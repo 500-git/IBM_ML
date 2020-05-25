@@ -1,2 +1,2 @@
 # IBM_ML
-#For personal study
+For personal study
